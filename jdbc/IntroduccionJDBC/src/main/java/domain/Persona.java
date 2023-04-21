@@ -3,6 +3,11 @@ package domain;
 public class Persona {
 
     private int id_persona;
+    private String nombre;
+    private String apellido;
+    private String email;
+    private String telefono;
+    private Double saldo;
 
     public int getId_persona() {
         return id_persona;
@@ -16,13 +21,9 @@ public class Persona {
         return nombre;
     }
 
-    private String nombre;
-
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
-    private String apellido;
 
     public String getApellido() {
         return apellido;
@@ -32,8 +33,6 @@ public class Persona {
         this.apellido = apellido;
     }
 
-    private String email;
-
     public String getEmail() {
         return email;
     }
@@ -42,8 +41,6 @@ public class Persona {
         this.email = email;
     }
 
-    private String telefono;
-
     public String getTelefono() {
         return telefono;
     }
@@ -51,8 +48,6 @@ public class Persona {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
-
-    private Double saldo;
 
     public Double getSaldo() {
         return saldo;

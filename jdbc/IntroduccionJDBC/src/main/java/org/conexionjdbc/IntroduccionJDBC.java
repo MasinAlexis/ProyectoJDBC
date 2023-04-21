@@ -1,9 +1,12 @@
 package org.conexionjdbc;
 
 import datos.PersonasJDBC;
+import datos.UsuarioJDBC;
 import domain.Persona;
+import domain.Usuario;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class IntroduccionJDBC {
@@ -44,8 +47,16 @@ public class IntroduccionJDBC {
          */
 
         //Ejecutamos DELETE
+        /*
         Persona personaDel = new Persona();
             personaDel.setId_persona(7);
         personasJDBC.delete(personaDel);
+         */
+
+        UsuarioJDBC usuarioJDBC = new UsuarioJDBC();
+        List<Usuario> usuarios = usuarioJDBC.select();
+        for (Usuario usuario : usuarios) {
+            System.out.println(usuario);
+        }
     }
 }
