@@ -10,7 +10,7 @@ public class IntroduccionJDBC {
             //Objeto de conexion
             Connection conexion = DriverManager.getConnection(url, "root", "admin");
             Statement instruccion = conexion.createStatement();
-            String sql = "SELECT id_persona, nombre, apellido, email,telefono, saldo FROM persona";
+            String sql = "SELECT id_persona, nombre, apellido, email, telefono, saldo FROM persona";
             ResultSet resultado = instruccion.executeQuery(sql);
             while(resultado.next()){
                 System.out.println("Id Persona: " + resultado.getInt(1) + "\n");
