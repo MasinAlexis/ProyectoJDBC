@@ -64,13 +64,14 @@ public class Persona {
 
     @Override
     public String toString() {
-        return "Persona{" +
-                "id_persona=" + id_persona +
-                ", nombre='" + nombre + '\'' +
-                ", apellido='" + apellido + '\'' +
-                ", email='" + email + '\'' +
-                ", telefono='" + telefono + '\'' +
-                ", saldo=" + saldo +
-                '}';
+        return "Persona{" + "\n" +
+                "    id_persona= " + id_persona + "\n" +
+                "    nombre= " + nombre + "\n" +
+                "    apellido= " + apellido + "\n" +
+                "    email= " + email + "\n" +
+                "    telefono= " + telefono + "\n" +
+                "    saldo= " + saldo + "\n" +
+                '}' + "\n" +
+                "-----------------------------------";
     }
 }
