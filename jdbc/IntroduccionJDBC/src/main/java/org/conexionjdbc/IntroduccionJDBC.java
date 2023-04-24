@@ -1,19 +1,16 @@
 package org.conexionjdbc;
 
-import datos.PersonasJDBC;
-import datos.UsuarioJDBC;
-import domain.Persona;
-import domain.Usuario;
-
+import datos.*;
+import domain.*;
 import java.sql.*;
-import java.util.ArrayList;
 import java.util.List;
 
 public class IntroduccionJDBC {
     public static void main(String[] args){
 
         PersonasJDBC personasJDBC = new PersonasJDBC();
-        //Ejecutamos SELECT
+
+        //Ejecutamos SELECT ------------------------------------------------------
         try {
             List<Persona> personas = personasJDBC.select();
             for (Persona persona: personas) {
@@ -23,7 +20,7 @@ public class IntroduccionJDBC {
             e.printStackTrace(System.out);
         }
 
-        //Ejecutamos INSERT
+        //Ejecutamos INSERT -----------------------------------------------------
         /*
         Persona persona = new Persona();
             persona.setNombre("Hugo");
@@ -34,7 +31,7 @@ public class IntroduccionJDBC {
         personasJDBC.insert(persona);
         */
 
-        //Ejecutamos UPDATE
+        //Ejecutamos UPDATE -----------------------------------------------------
         /*
         Persona personaUp = new Persona();
             personaUp.setId_persona(7);
@@ -44,41 +41,44 @@ public class IntroduccionJDBC {
             personaUp.setTelefono("3624857463");
             personaUp.setSaldo(2700.50);
         personasJDBC.update(personaUp);
-         */
+        */
 
-        //Ejecutamos DELETE
+        //Ejecutamos DELETE -----------------------------------------------------
         /*
         Persona personaDel = new Persona();
             personaDel.setId_persona(7);
         personasJDBC.delete(personaDel);
-         */
+        */
 
         UsuarioJDBC usuarioJDBC = new UsuarioJDBC();
+        //Ejecutamos SELECT
         List<Usuario> usuarios = usuarioJDBC.select();
         for (Usuario usuario : usuarios) {
             System.out.println(usuario);
         }
 
-        //Ejecutamos INSERT
+        //Ejecutamos INSERT---------------------------------------------------------------------------
         /*
         Usuario usuario = new Usuario();
             usuario.setUsername("masinalexis");
             usuario.setPassword("$2a$10$3Id2bRKPV5ucb5QgTfYxzzwipjTSn9iObXtpbpL4Sbiop6R07/miK");
         usuarioJDBC.insert(usuario);
-         */
+        */
 
-        //Ejecutamos UPDATE
+        //Ejecutamos UPDATE --------------------------------------------------------------------------
         /*
         Usuario usuario = new Usuario();
             usuario.setId_usuario(3);
             usuario.setUsername("alexismasin");
             usuario.setPassword("$2a$10$3Id2bRKPV5ucb5QgTfYxzzwipjTSn9iObXtpbpL4Sbiop6R07/miK");
         usuarioJDBC.update(usuario);
-         */
+        */
 
-        //Ejecutamos DELETE
+        //Ejecutamos DELETE --------------------------------------------------------------------------
+        /*
         Usuario usuario = new Usuario();
             usuario.setId_usuario(3);
         usuarioJDBC.delete(usuario);
+        */
     }
 }
