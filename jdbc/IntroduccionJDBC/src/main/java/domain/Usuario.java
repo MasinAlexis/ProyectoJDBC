@@ -32,9 +32,9 @@ public class Usuario {
     @Override
     public String toString() {
         return "Usuario{" + "\n" +
-                "    id_usuario=" + id_usuario + "\n" +
-                "    username='" + username + "\n" +
-                "    password='" + password + "\n" +
+                "    id_usuario= " + id_usuario + "\n" +
+                "    username= " + username + "\n" +
+                "    password= " + password + "\n" +
                 '}' + "\n" +
                 "---------------------------------" ;
     }

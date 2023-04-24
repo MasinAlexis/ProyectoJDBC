@@ -58,5 +58,27 @@ public class IntroduccionJDBC {
         for (Usuario usuario : usuarios) {
             System.out.println(usuario);
         }
+
+        //Ejecutamos INSERT
+        /*
+        Usuario usuario = new Usuario();
+            usuario.setUsername("masinalexis");
+            usuario.setPassword("$2a$10$3Id2bRKPV5ucb5QgTfYxzzwipjTSn9iObXtpbpL4Sbiop6R07/miK");
+        usuarioJDBC.insert(usuario);
+         */
+
+        //Ejecutamos UPDATE
+        /*
+        Usuario usuario = new Usuario();
+            usuario.setId_usuario(3);
+            usuario.setUsername("alexismasin");
+            usuario.setPassword("$2a$10$3Id2bRKPV5ucb5QgTfYxzzwipjTSn9iObXtpbpL4Sbiop6R07/miK");
+        usuarioJDBC.update(usuario);
+         */
+
+        //Ejecutamos DELETE
+        Usuario usuario = new Usuario();
+            usuario.setId_usuario(3);
+        usuarioJDBC.delete(usuario);
     }
 }

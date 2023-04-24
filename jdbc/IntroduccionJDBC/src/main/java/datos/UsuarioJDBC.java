@@ -15,7 +15,7 @@ public class UsuarioJDBC {
     private static final String SQL_UPDATE_USER = "UPDATE usuario SET username = ?, " +
                                                                      "password = ? " +
                                                   "WHERE id_usuario = ?";
-    private static final String SQL_DELETE_USER = "DELETE FROM usuario WHERE id_persona = ?";
+    private static final String SQL_DELETE_USER = "DELETE FROM usuario WHERE id_usuario = ?";
 
     public List<Usuario> select(){
         Connection con = null;
@@ -46,5 +46,74 @@ public class UsuarioJDBC {
             Conexion.close(rs);
         }
         return usuarios;
+    }
+
+    public int insert(Usuario usuario){
+        Connection con = null;
+        PreparedStatement stmt = null;
+        int rows = 0;
+
+        try {
+            con = Conexion.getConnection();
+            stmt = con.prepareStatement(SQL_INSERT_USER);
+            stmt.setString(1, usuario.getUsername());
+            stmt.setString(2, usuario.getPassword());
+
+            System.out.println("Ejecutando Query: " + SQL_INSERT_USER);
+            rows = stmt.executeUpdate();
+            System.out.println("Registros insertados: " + rows);
+        } catch (SQLException e) {
+            e.printStackTrace(System.out);
+        } finally {
+            Conexion.close(con);
+            Conexion.close(stmt);
+        }
+        return rows;
+    }
+
+    public int update(Usuario usuario){
+        Connection con = null;
+        PreparedStatement stmt = null;
+        int rows = 0;
+
+        try {
+            con = Conexion.getConnection();
+            stmt = con.prepareStatement(SQL_UPDATE_USER);
+            stmt.setString(1, usuario.getUsername());
+            stmt.setString(2, usuario.getPassword());
+            stmt.setInt(3, usuario.getId_usuario());
+
+            System.out.println("Ejecutando Query: " + SQL_UPDATE_USER);
+            rows = stmt.executeUpdate();
+            System.out.println("Registros actualizados: " + rows);
+        } catch (SQLException e) {
+            e.printStackTrace(System.out);
+        } finally {
+            Conexion.close(con);
+            Conexion.close(stmt);
+        }
+        return rows;
+    }
+
+    public int delete(Usuario usuario){
+        Connection con = null;
+        PreparedStatement stmt = null;
+        int rows = 0;
+
+        try {
+            con = Conexion.getConnection();
+            stmt = con.prepareStatement(SQL_DELETE_USER);
+            stmt.setInt(1, usuario.getId_usuario());
+
+            System.out.println("Ejecutando Query: " + SQL_DELETE_USER);
+            rows = stmt.executeUpdate();
+            System.out.println("Registros eliminados: " + rows);
+        } catch (SQLException e) {
+            e.printStackTrace(System.out);
+        } finally {
+            Conexion.close(con);
+            Conexion.close(stmt);
+        }
+        return rows;
     }
 }
